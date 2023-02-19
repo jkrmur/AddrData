@@ -3,6 +3,9 @@
 */**/obj/Debug
 */**/obj/Release
 *.exe
+.vs/
+AddrData/.vs
 *.pdb
 *.manifest
 *.cache
+*
