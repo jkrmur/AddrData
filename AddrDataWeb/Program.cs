@@ -18,6 +18,8 @@ namespace AddrDataWeb
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+            builder.Services.AddControllers();
+            builder.Services.AddHttpClient();
 
             var connectionString = "mongodb+srv://test:test@cluster0.tsde1.mongodb.net/?retryWrites=true&w=majority";
             var client = new MongoClient(connectionString);
@@ -38,9 +40,15 @@ namespace AddrDataWeb
 
             app.UseAuthorization();
 
-            app.MapRazorPages();
+            app.MapControllers();
 
-          
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages();
+                endpoints.MapControllers();
+            });
+
+
 
             app.Run();
         }

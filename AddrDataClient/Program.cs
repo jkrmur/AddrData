@@ -79,13 +79,13 @@ namespace AddrData
 
         static void Main(string[] args)
         {
-            var client = new MongoClient("mongodb+srv://XXX:XXXt@cluster0.tsde1.mongodb.net/?retryWrites=true&w=majority");
+            var client = new MongoClient("mongodb+srv://test:test@cluster0.tsde1.mongodb.net/?retryWrites=true&w=majority");
             var database = client.GetDatabase("AddrData");
             var collection = database.GetCollection<PacketData>("data");
 
 
             Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Raw, ProtocolType.IP);
-            socket.Bind(new IPEndPoint(IPAddress.Parse("XXXXXXXXXXX"), 0));
+            socket.Bind(new IPEndPoint(IPAddress.Parse("192.168.1.102"), 0));
             socket.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.HeaderIncluded, true);
             socket.IOControl(IOControlCode.ReceiveAll, BitConverter.GetBytes(1), BitConverter.GetBytes(1));
 
