@@ -4,10 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - AddrDataWeb</title>
+    
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AddrDataWeb.styles.css" asp-append-version="true" />
- 
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.21.3/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
@@ -33,6 +35,19 @@
         </nav>
     </header>
 
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div class="toast fade" id="myToast">
+        <div class="toast-header">
+              
+            <strong class="me-auto"><i class="bi-globe"></i> Alert</strong>
+                <small>&nbsp; just now</small>
+            <button type="button" class="btn btn-close" data-bs-dismiss="toast"></button>
+        </div>
+        <div class="toast-body bg-light" id="ToastBody">
+            Message
+        </div>
+    </div>
+    </div>
 
     <div class="container">
         <main role="main" class="pb-3">
@@ -49,6 +64,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.21.3/dist/bootstrap-table.min.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
